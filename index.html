@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autor" content="itadaki">
+    <meta name="keywords" content="html, css, javascript, jquery, chart.js">
+    <title>Jqueryの使い方</title>
+
+    <!-- cssとの紐づけを行うためのlink -->
+    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+</head>
+
+<body>
+
+    <div class="container">
+
+    <header>
+        <h1>JQuery</h1>
+        <nav>
+            <ul>
+                <li>ホーム</li>
+                <li>タグリファレンス</li>
+                <li>問い合わせ</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>JQuery</h2>
+
+            <div>
+                <section>
+                    <h3>セレクタ</h3>
+
+                    <div>
+                        <!-- ※idはユニークでないとダメ -->
+                        <p id="tese-p1">マリオ</p>
+                        <p class="test-p2">Kirby</p>
+                        <p id="test-p3">ドンキー</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>メソッド</h3>
+                    <div>
+                        <button type="button" onclick="toggle()">表示・非表示</button>
+                        <button type="button" onclick="slide()">スライド</button>
+                        <button type="button" onclick="fade()">フェード</button>
+                        <button type="button" onclick="color()">CSS操作</button>
+                        <button type="button" onclick="custumAnimate()">カスタムアニメーション</button>
+                    </div>
+                </section>
+
+                <section>
+                    <!-- ユーザが能動的に動かさなくてもイベントを発生できる -->
+                    <h3>イベントハンドラ</h3>
+                    <div>
+                        <form action="">
+                            <input id="input-1" type="text">
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section>
+            <h2>Chart.js</h2>
+        </section>
+    </main>
+
+    <footer>
+        Copyright &copy; yuki Hotta, All Rights Reserved.
+    </footer>
+
+    </div>
+
+    <!-- 外部のライブラリは先に読みこむ必要がある -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- chartJSのライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+
+    <!-- 自分のJSファイル -->
+    <script src="./js/jquery_test.js"></script>
+    <script src="./js/chart_test.js"></script>
+
+
+</body>
+</html>
+<!-- 外部ライブラリ(Mathは組込みライブラリ)(jQuery) -->
+<!-- 最終課題：Webサイトを作る・JSサイトで使う、github.ioで公開する -->
+<!-- 提出はwebサイトの説明・工夫した点や難しかった点、
+     拡張した点を解説し、github.ioのURLを記載したファイルを提出 -->
+<!-- 期限はテスト後一週間 -->
