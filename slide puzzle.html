@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>スライドパズル</title>
+    <style>
+        .tile{
+            width:100px;
+            height:100px;
+            border:3px solid blue;
+            border-radius: 10px;
+            text-align:center;
+            font-size:50px;
+            background-color:white;
+            margin-left:auto;
+            margin-right:auto;
+            box-shadow: rgb(128, 128, 128) 5px 5px;
+            border-color:blue;
+        }
+        #table{
+            float:left;
+            cursor:pointer;
+        }
+        #clear{
+            float:right;
+            font-size: 50px;
+            color:red;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <p>※空白の場所だけ動かせる</p>
+    <table id="table"></table>
+    <p id="clear"></p>
+<script>
+"use strict"//厳格モード
+    const tiles = [];//タイル用枠組み
+
+    function init(){
+        let table = document.getElementById("table");//一度完成品を作る
+        for(let i = 0; i<5; i++){
+            let tr = document.createElement("tr");
+            for(let j = 0; j<5; j++){
+                let td = document.createElement("td");
+                let index = i * 5 + j;//コマの場所を決めている
+                td.className = "tile";
+                td.index = index;//コマの位置
+                td.value = index;//プログラム上のコマの数字
+                td.textContent =  index == 0 ? "" : index;//コマ内の数字
+                td.onclick = click;//押したときに起動　※()を付けると返り値が必要になる
+                tr.appendChild(td);//行にコマを入れる
+                tiles.push(td);
+            }
+            table.appendChild(tr);//表にコマを入れた行を入れる
+        }
+
+        for(let i = 0; i<1000; i++){
+            click({ target: { index: Math.floor(Math.random() * 25) } });/*自動的にクリックして実質ランダム
+                                                                        (この場合500回入れ替えが起きる*/
+        }
+    }
+
+    function click(e){
+        let i = e.target.index;//クリックした場所のindex値を代入
+
+        if(i-5 >= 0 && tiles[i-5].value == 0){//上と入れ替え※最上段の時できないようにしている
+            swap(i, i-5);
+            check();
+        }else if(i+5 < 25 && tiles[i+5].value == 0){//下と入れ替え
+            swap(i, i+5);
+            check();
+        }else if(i%5 != 0 && tiles[i-1].value == 0){//左と入れ替え
+            swap(i, i-1);
+            check();
+        }else if(i%5 != 4 && tiles[i+1].value == 0){//右と入れ替え
+            swap(i, i+1);
+            check();
+        }
+    }
+
+    function swap(i, j){
+        let tmp = tiles[i].value;//変更先を一時避難
+        tiles[i].textContent = tiles[j].textContent;
+        tiles[i].value = tiles[j].value;
+        tiles[j].textContent = tmp;
+        tiles[j].value = tmp;
+    }
+
+    function check(){
+        if(tiles[0].textContent === ""){
+            if(tiles[1].textContent === "1"){
+                if(tiles[2].textContent === "2"){
+                    if(tiles[3].textContent === "3"){
+                        if(tiles[4].textContent === "4"){
+                            if(tiles[5].textContent === "5"){
+                                if(tiles[6].textContent === "6"){
+                                    if(tiles[7].textContent === "7"){
+                                        if(tiles[8].textContent === "8"){
+                                            if(tiles[9].textContent === "9"){
+                                                if(tiles[10].textContent === "10"){
+                                                    if(tiles[11].textContent === "11"){
+                                                        if(tiles[12].textContent === "12"){
+                                                            if(tiles[13].textContent === "13"){
+                                                                if(tiles[14].textContent === "14"){
+                                                                    if(tiles[15].textContent === "15"){
+                                                                        if(tiles[16].textContent === "16"){
+                                                                            if(tiles[17].textContent === "17"){
+                                                                                if(tiles[18].textContent === "18"){
+                                                                                    if(tiles[19].textContent === "19"){
+                                                                                        if(tiles[20].textContent === "20"){
+                                                                                            if(tiles[21].textContent === "21"){
+                                                                                                if(tiles[22].textContent === "22"){
+                                                                                                    if(tiles[23].textContent === "23"){
+                                                                                                        if(tiles[24].textContent === "24"){
+                                                                                                            document.getElementById("clear").textContent = "コングラチュレーション！！";
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }else{
+            document.getElementById("clear").textContent = "";
+        }
+    }
+</script>
+</body>
+</html>

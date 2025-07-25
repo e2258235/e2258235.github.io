@@ -195,3 +195,13 @@ td:last-child{
     color:red;
 }
 
+/* 写真の定義 */
+.picture{
+    display: flex;
+    align-items: center;
+}
+
+.picture_title{
+    display: flex;
+    gap: 300px
+}
