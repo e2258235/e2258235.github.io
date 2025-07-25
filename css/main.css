@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+.container {
+    display: grid;
+    /* mainを2,a-sideを1にする */
+    grid-template-columns: 1fr 2fr;
+    /* グリッドの領域の振り分け、構成を定義している(場所も) */
+    grid-template-areas:
+        "header-A header-A"
+        "main-A main-A"
+        "footer-A footer-A"
+    ;
+
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+
+
+
+/* 全てのページの構成要素 */
+header {
+    background: greenyellow;
+    grid-area: header-A;
+}
+
+main {
+    background: skyblue;
+    grid-area: main-A;
+    position: relative;
+}
+
+aside {
+    background: pink;
+
+    /* 画面に固定 */
+    position: fixed;
+    /* 最初に枠外にしておく */
+    left: -200px;
+    grid-area: aside-A;
+
+    /* 表示するときの定義 */
+    left: 0;
+    width: 200px;
+    /* ヘッダー分の高さを引く */
+    height: calc(100% - 170px);
+    top: 170px;
+    /* mainの上に表示 */
+    z-index: 5;
+
+    /* 0%と-100%を切り替えて表示非表示させる */
+    transform: translateX(-100%);
+    /* easeで自然的な動きを行う */
+    /* 最初は遅く、途中から速く、最後はまた遅く進行 */
+    transition: 0.3s ease;
+}
+
+aside.open {
+    /* open属性が付くと移動する */
+    transform: translateX(0);
+}
+
+aside button {
+    /* 相対的(親基準で)に位置を固定 */
+    position: absolute;
+    /* 移動時間の設定 */
+    transition: 0.3s;
+    top: 10px;
+    /* asideの右端から外に配置 */
+    right:-40px;
+    /* ボタンが一番前に来るようにする */
+    z-index: 10;
+}
+
+footer {
+    background: aliceblue;
+    grid-area: footer-A;
+}
+
+.back-ground {
+    /* 画像の幅が足りない場合は同じ画像がリピートされる */
+    background-image: url(../../problem2/img/pastel-back.jpg);
+
+    background-repeat: no-repeat;
+
+    /* 画面いっぱいに出力するとき100%にする */
+    background-size: 100%;
+}
+
+/* ヘッダーの変更 */
+.gnav > ul > li{
+    /* ボックスモデルの変更(inlineがボックスから変更可能) */
+    display: inline;
+
+    /* inlineにすると横幅の指定が出来ないが、padding等を用いると操作できる */
+    margin: 0 8px 0 0;
+    border-radius: 4px;
+    padding: 15px 8px;
+
+    background-color: rgb(221, 255, 218);
+
+}
+
+/* 水平線の変更 */
+hr{
+    /* 元の線を消す */
+    border: 0;
+    /* hrの高さを指定→太さの指定 */
+    height: 5px;
+    /* 色の指定 */
+    background-color: black;
+}
+
+
+
+
+/* 未訪問のリンクを指定するとき */
+a:link{
+    color: blue;
+}
+
+/* 訪問済みのリンク */
+a:visited{
+    color: violet;
+}
+
+
+
+
+/* メインページのサイト */
+/* 動画のボーダーの消去※htmlでも書けるが現在廃止されている */
+iframe {
+  border: none;
+}
+
+/* 時計と外部リンクを横並びにする */
+.one_container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* 縦方向のセンタリング */
+    /* 要素ごとの空白 */
+    gap: 10em;
+}
+
+/* 時計のスタイル */
+.clock {
+    font-size: 50px;
+    font-weight: bold;
+    align-items: center;
+    margin-left: 300px;
+
+    /* テキストと背景の色 */
+    color: #00f0ff;
+    background-color: #001f26;
+
+    /* テキストの影を複数重ねて、発光しているように見せる */
+    /* 後半の影ほどぼかしが強くなっている */
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+
+    /* ボーダーの定義 */
+    border: 2px solid #00f0ff;
+    border-radius: 8px;
+    /* テキストの余白 */
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+
+
+
+/* 表要素(カレンダーサイト) */
+tr{
+    font-size: 20px;
+    background-color:rgb(255, 246, 249);
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+td:first-child{
+    color:red;
+}
+
+td:last-child{
+    color:blue;
+}
+
+.holiday {
+    color:red;
+}
+
+.now{
+    color:red;
+}
+

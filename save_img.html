@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像展</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>コンピュータリテラシー</h1>
+
+            <hr>
+
+            <nav class="gnav">
+                <ul>
+                    <li>ホーム</li>
+                    <li>タグリファレンス</li>
+                    <li>問い合わせ</li>
+                </ul>
+            </nav>
+            
+        </header>
+
+        <aside class="drower">
+            <section>
+                <button id="page">🍔</button>
+                <h3>ページ移動</h3>
+                <ul>
+                    <li>
+                        <a href="index.html">メインページ(index.html)</a>
+                    </li>
+
+                    <li>
+                        <a href="calender.html">カレンダー(calender.html)</a>
+                    </li>
+                </ul>
+
+            </section>
+        </aside>
+
+        <main id="top">
+            <section>
+                <!-- 画像を増やしたい -->
+                <!-- 動画も入れたい -->
+                <h3>特定の画像までのリンク</h3>
+                <ol>
+                    <li>
+                        <a href="#marmot">マーモットの画像</a>
+                    </li>
+
+                    <li>
+                        <a href="#car">車の画像</a>
+                    </li>
+
+                    <li>
+                        <a href="#cat">猫の画像</a>
+                    </li>
+
+                    <li>
+                        <a href="#human">ゲーム画面の画像</a>
+                    </li>
+
+                    <li>
+                        <a href="#under">一番下まで飛ぶ</a>
+                    </li>
+                </ol>
+
+                <h3 id="marmot">マーモットの画像</h3>
+                <img src="img/marmot.jpg" alt="マーモットの画像" height="300" width="300">
+
+                <h3 id="car">車の画像</h3>
+                <img src="img/370z.png" alt="車の画像" height="300" width="400">
+
+                <h3 id="cat">猫の画像</h3>
+                <img src="img/neko.gif" alt="猫の画像" height="300" width="400">
+                
+                <h3 id="human">戦士と竜の画像</h3>
+                <img src="img/my_icon.png" alt="アイコンの画像" height="300" width="300">
+              
+                <img src="img/shooting.png" alt="ゲームの画像" height="300" width="400">
+                
+            </section>
+
+            <a href="#top">一番上まで飛ぶ</a>
+
+        </main>
+
+        <footer id="under">
+            Copyright &copy; yuki Hotta, All Rights Reserved.
+        </footer>
+    </div>
+
+    <!-- 外部のライブラリは先に読みこむ必要がある -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- chartJSのライブラリ -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> -->
+
+    <!-- 自分のJSファイル -->
+    <script src="./js/jquery_mypage.js"></script>
+    <!-- <script src="./js/chart_mypage.js"></script> -->
+</body>
+</html>

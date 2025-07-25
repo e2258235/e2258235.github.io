@@ -6,92 +6,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="itadaki">
-    <meta name="keywords" content="html, css, javascript, jquery, chart.js">
-    <title>Jqueryの使い方</title>
-
-    <!-- cssとの紐づけを行うためのlink -->
-    <!-- <link rel="stylesheet" href="./css/main.css"> -->
+    <meta name="keywords" content="html, css, javascript">
+    <title>HTML最終課題</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
-
     <div class="container">
+    
+        <header>
+            <h1>コンピュータリテラシー</h1>
 
-    <header>
-        <h1>JQuery</h1>
-        <nav>
-            <ul>
-                <li>ホーム</li>
-                <li>タグリファレンス</li>
-                <li>問い合わせ</li>
-            </ul>
-        </nav>
-    </header>
+            <hr>
 
-    <main>
-        <section>
-            <h2>JQuery</h2>
+            <nav class="gnav">
+                <ul>
+                    <li>ホーム</li>
+                    <li>タグリファレンス</li>
+                    <li>問い合わせ</li>
+                </ul>
+            </nav>
 
-            <div>
-                <section>
-                    <h3>セレクタ</h3>
+        </header>
 
-                    <div>
-                        <!-- ※idはユニークでないとダメ -->
-                        <p id="tese-p1">マリオ</p>
-                        <p class="test-p2">Kirby</p>
-                        <p id="test-p3">ドンキー</p>
+        <!-- javascriptでドロワーにする -->
+        <aside class="drower">
+            <section>
+                <button id="page">🍔</button>
+
+                <h3>ページ移動</h3>
+                <ul>
+                    <li>
+                        <a href="calender.html">カレンダー(calender.html)</a>
+                    </li>
+
+                    <li>
+                        <a href="save_img.html">気に入った画像(save_img.html)</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="back-ground">
+
+            <h2>ホーム画面</h2>
+
+            <section>
+                <div class="one_container">
+                    <div class="links">
+                        <h3>外部リンク(創大関連サイト)</h3>
+                        <ul>
+                            <li>
+                                <a href="https://plas.soka.ac.jp/csp/plas/login.csp" target="_blank">創価大学ポータルサイト</a>
+                            </li>
+                            <li>
+                                <a href="https://www.soka.ac.jp/" target="_blank">創価大学HP</a>
+                            </li>
+                            <li>
+                                <a href="https://x.com/soka_univ" target="_blank">創価大学X(旧Twitter)</a>
+                            </li>
+                        
+                        </ul>
                     </div>
-                </section>
 
-                <section>
-                    <h3>メソッド</h3>
-                    <div>
-                        <button type="button" onclick="toggle()">表示・非表示</button>
-                        <button type="button" onclick="slide()">スライド</button>
-                        <button type="button" onclick="fade()">フェード</button>
-                        <button type="button" onclick="color()">CSS操作</button>
-                        <button type="button" onclick="custumAnimate()">カスタムアニメーション</button>
-                    </div>
-                </section>
+                    <div class="clock" id="clock"></div>
+                </div>
 
-                <section>
-                    <!-- ユーザが能動的に動かさなくてもイベントを発生できる -->
-                    <h3>イベントハンドラ</h3>
-                    <div>
-                        <form action="">
-                            <input id="input-1" type="text">
-                        </form>
-                    </div>
-                </section>
-            </div>
-        </section>
+                <div class="movie">
+                    <h3>元気になる曲</h3>
+                    <iframe src="https://scratch.mit.edu/projects/719529887/" 
+                            allowtransparency="true" 
+                            width="485" 
+                            height="402" 
+                            frameborder="0" 
+                            scrolling="no" 
+                            allowfullscreen></iframe>
 
-        <section>
-            <h2>Chart.js</h2>
-        </section>
-    </main>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WIQ2oHkT6Fs?si=5uPvLW9hGCsLsQpI" title="デデデ大王 アレンジ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </section>
+            
+        </main>
 
-    <footer>
-        Copyright &copy; yuki Hotta, All Rights Reserved.
-    </footer>
+        <footer>
+            Copyright &copy; yuki Hotta, All Rights Reserved.
+        </footer>
 
     </div>
 
     <!-- 外部のライブラリは先に読みこむ必要がある -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- chartJSのライブラリ -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> -->
 
     <!-- 自分のJSファイル -->
-    <script src="./js/jquery_test.js"></script>
-    <script src="./js/chart_test.js"></script>
-
-
+    <script src="./js/jquery_mypage.js"></script>
+    <!-- <script src="./js/chart_mypage.js"></script> -->
 </body>
+
+
 </html>
-<!-- 外部ライブラリ(Mathは組込みライブラリ)(jQuery) -->
-<!-- 最終課題：Webサイトを作る・JSサイトで使う、github.ioで公開する -->
-<!-- 提出はwebサイトの説明・工夫した点や難しかった点、
-     拡張した点を解説し、github.ioのURLを記載したファイルを提出 -->
-<!-- 期限はテスト後一週間 -->
