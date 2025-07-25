@@ -203,5 +203,6 @@ td:last-child{
 
 .picture_title{
     display: flex;
+    align-items: center;
     gap: 300px
 }
